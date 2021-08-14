@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-13T17:36:46 IST" name="Default suite" finished-at="2021-08-13T17:37:06 IST" duration-ms="19643">
+    <groups>
+    </groups>
+    <test started-at="2021-08-13T17:36:46 IST" name="Default test" finished-at="2021-08-13T17:37:06 IST" duration-ms="19643">
+      <class name="com.sg.openemrtest.LoginTest">
+        <test-method is-config="true" signature="setUP()[pri:0, instance:com.sg.openemrtest.LoginTest@34f5090e]" started-at="2021-08-13T17:36:46 IST" name="setUP" finished-at="2021-08-13T17:36:52 IST" duration-ms="6291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="invalidCredentialTest()[pri:0, instance:com.sg.openemrtest.LoginTest@34f5090e]" started-at="2021-08-13T17:36:52 IST" name="invalidCredentialTest" finished-at="2021-08-13T17:36:54 IST" duration-ms="1526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCredentialTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sg.openemrtest.LoginTest@34f5090e]" started-at="2021-08-13T17:36:54 IST" name="tearDown" finished-at="2021-08-13T17:36:55 IST" duration-ms="816" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUP()[pri:0, instance:com.sg.openemrtest.LoginTest@34f5090e]" started-at="2021-08-13T17:36:55 IST" name="setUP" finished-at="2021-08-13T17:37:00 IST" duration-ms="5960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="validCredentialTest()[pri:0, instance:com.sg.openemrtest.LoginTest@34f5090e]" started-at="2021-08-13T17:37:00 IST" name="validCredentialTest" finished-at="2021-08-13T17:37:05 IST" duration-ms="4218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validCredentialTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sg.openemrtest.LoginTest@34f5090e]" started-at="2021-08-13T17:37:05 IST" name="tearDown" finished-at="2021-08-13T17:37:06 IST" duration-ms="794" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sg.openemrtest.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
