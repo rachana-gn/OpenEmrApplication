@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
-	//this method should be used in test
+	//this method should be used in DataProvider inorder to run LoginTest
 
 	public static Object[][] getSheetToObjectArray(String filePath, String sheetName) throws IOException {
 		FileInputStream file = new FileInputStream(filePath);
@@ -26,13 +26,15 @@ public class ExcelUtils {
 		System.out.println(cellCount);
 
 		Object[][] main = new Object[rowCount - 1][cellCount];
+		//DataFormatter format = new DataFormatter();
+		
 		for (int r = 1; r < rowCount; r++) {
 			for (int c = 0; c < cellCount; c++) {
 				XSSFRow row = sheet.getRow(r);
 
 				XSSFCell cell = row.getCell(c);
 
-				DataFormatter format = new DataFormatter();
+				DataFormatter format = new DataFormatter();//can be pasted above also
 				String cellValue = format.formatCellValue(cell);
 
 				System.out.println(cellValue);
