@@ -7,56 +7,75 @@ import org.testng.annotations.Test;
 import com.sg.openemrbase.WebDriverWrapper;
 import com.sg.openemrpages.DashboardPage;
 import com.sg.openemrpages.LoginPage;
+import com.sg.utilities.DataProviderUtils;
 
 public class LoginTest extends WebDriverWrapper {
 	//Day5_Class_LoginTest and Day6_ClassDataPovider
 	
-	@DataProvider 
-	public Object[][] validCredentialTestData()	
+	//using from Utilities package
+	@Test(dataProviderClass = DataProviderUtils.class,dataProvider = "validCredentialTestData" )
+	public void validCredentialTest(String username, String password, String language, String expectedTitle)	
 	{
-		//using DataProvider
-		//admin,pass,English (Indian),OpenEMR
-	    //physician,physician,English (Indian),OpenEMR
-	    //accountant,accountant,English (Indian),OpenEMR
 		
+		LoginPage login = new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.selectlanguageByText(language);
+		login.clickOnLogin();
 	
-		Object[][]main = new Object[3][4];
-		{
-			main[0][0]= "admin";
-			main[0][1]= "pass";
-			main[0][2]= "English (Indian)";
-			main[0][3]= "OpenEMR";
-			
-			main[1][0]= "physician";
-			main[1][1]= "physician";
-			main[1][2]= "English (Indian)";
-			main[1][3]= "OpenEMR";
-			
-			main[2][0]= "accountant";
-			main[2][1]= "accountant";
-			main[2][2]= "English (Indian)";
-			main[2][3]= "OpenEMR";
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.waitForPresenceOfFlowBoard();
+		
+		Assert.assertEquals(dashboard.getCurrentTitle(), expectedTitle);
 
-			
-			return main;
-			}
-			
-		}
+	
+	
+//	@DataProvider 
+//	public Object[][] validCredentialTestData()	
+//	{
+//		//using DataProvider
+//		//admin,pass,English (Indian),OpenEMR
+//	    //physician,physician,English (Indian),OpenEMR
+//	    //accountant,accountant,English (Indian),OpenEMR
+//		
+//	
+//		Object[][]main = new Object[3][4];
+//		{
+//			main[0][0]= "admin";
+//			main[0][1]= "pass";
+//			main[0][2]= "English (Indian)";
+//			main[0][3]= "OpenEMR";
+//			
+//			main[1][0]= "physician";
+//			main[1][1]= "physician";
+//			main[1][2]= "English (Indian)";
+//			main[1][3]= "OpenEMR";
+//			
+//			main[2][0]= "accountant";
+//			main[2][1]= "accountant";
+//			main[2][2]= "English (Indian)";
+//			main[2][3]= "OpenEMR";
+//
+//			
+//			return main;
+//			}
+//			
+//		}
 		
-		@Test(dataProvider = "validCredentialTestData")
-		public void validCredentialTest(String username, String password, String language, String expectedTitle)	
-		{
-			
-			LoginPage login = new LoginPage(driver);
-			login.enterUsername(username);
-			login.enterPassword(password);
-			login.selectlanguageByText(language);
-			login.clickOnLogin();
-		
-			DashboardPage dashboard = new DashboardPage(driver);
-			dashboard.waitForPresenceOfFlowBoard();
-			
-			Assert.assertEquals(dashboard.getCurrentTitle(), expectedTitle);
+//		@Test(dataProvider = "validCredentialTestData")
+//		public void validCredentialTest(String username, String password, String language, String expectedTitle)	
+//		{
+//			
+//			LoginPage login = new LoginPage(driver);
+//			login.enterUsername(username);
+//			login.enterPassword(password);
+//			login.selectlanguageByText(language);
+//			login.clickOnLogin();
+//		
+//			DashboardPage dashboard = new DashboardPage(driver);
+//			dashboard.waitForPresenceOfFlowBoard();
+//			
+//			Assert.assertEquals(dashboard.getCurrentTitle(), expectedTitle);
 				
 		
 		
