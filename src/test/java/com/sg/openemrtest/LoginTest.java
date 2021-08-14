@@ -27,7 +27,8 @@ public class LoginTest extends WebDriverWrapper {
 		dashboard.waitForPresenceOfFlowBoard();
 		
 		Assert.assertEquals(dashboard.getCurrentTitle(), expectedTitle);
-
+	
+	
 	
 	
 //	@DataProvider 
@@ -120,17 +121,17 @@ public class LoginTest extends WebDriverWrapper {
 }
 	
 	@Test
-	public void invalidCredentialTest() {
+	public void invalidCredentialTest(String username, String password, String language, String expectedTitle) {	
 		
 	
 		//using creation constructor for webdriver from LoginPage
 		LoginPage login = new LoginPage(driver);
-		login.enterUsername("admin");
-		login.enterPassword("pass1");
-		login.selectlanguageByText("English (Indian)");
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.selectlanguageByText(language);
 		login.clickOnLogin();
 		
-		Assert.assertEquals(login.getInvalidLoginError(), "Invalid username or password");
+		Assert.assertEquals(login.getInvalidLoginError(), expectedTitle);
 		
 		//Non static method
 //		LoginPage login = new LoginPage();
