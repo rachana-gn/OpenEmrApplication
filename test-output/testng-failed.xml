@@ -5,10 +5,9 @@
     <classes>
       <class name="com.sg.openemrtest.LoginTest">
         <methods>
-          <include name="validCredentialTest"/>
+          <include name="validCredentialTest" invocation-numbers="0 1 2"/>
           <include name="setUP"/>
           <include name="tearDown"/>
-          <include name="invalidCredentialTest"/>
         </methods>
       </class> <!-- com.sg.openemrtest.LoginTest -->
     </classes>
