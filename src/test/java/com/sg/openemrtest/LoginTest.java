@@ -120,7 +120,7 @@ public class LoginTest extends WebDriverWrapper {
 //        Assert.assertEquals(actualValue, "OpenEMR");
 }
 	
-	@Test
+	@Test(dataProviderClass  = DataProviderUtils.class, dataProvider = "invalidCredentialTestData")
 	public void invalidCredentialTest(String username, String password, String language, String expectedTitle) {	
 		
 	

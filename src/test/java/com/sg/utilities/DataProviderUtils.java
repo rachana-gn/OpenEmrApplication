@@ -1,8 +1,17 @@
 package com.sg.utilities;
 
+import java.io.IOException;
+
 import org.testng.annotations.DataProvider;
 
 public class DataProviderUtils {
+	//Dataprovider for excel
+	@DataProvider
+	public Object[][] invalidCredentialTestData() throws IOException
+	{
+		Object[][] main = ExcelUtils.getSheetToObjectArray("src/test/resources/testdata/OpenEmrData.xlsx", "inValidCrendentialTest");
+		return main;
+	}
 	
 	@DataProvider 
 	public Object[][] validCredentialTestData()	
