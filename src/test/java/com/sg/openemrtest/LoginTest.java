@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.sg.openemrbase.WebDriverWrapper;
+import com.sg.openemrpages.LoginPage;
 
 public class LoginTest extends WebDriverWrapper {
 	//Day5_Class_LoginTest
@@ -15,8 +16,10 @@ public class LoginTest extends WebDriverWrapper {
 	@Test 
 	public void validCredentialTest()																																				
 	{
-		driver.findElement(By.id("authUser")).sendKeys("admin");
-		driver.findElement(By.id("clearPass")).sendKeys("pass");
+		LoginPage.enterUsername(driver, "admin");
+		LoginPage.enterPassword(driver, "pass");
+		//driver.findElement(By.id("authUser")).sendKeys("admin");
+		//driver.findElement(By.id("clearPass")).sendKeys("pass");
 		Select selectLang = new Select(driver.findElement(By.name("languageChoice")));
 		selectLang.selectByVisibleText("English (Indian)");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -31,8 +34,11 @@ public class LoginTest extends WebDriverWrapper {
 	@Test
 	public void invalidCredentialTest() {
 		
-		driver.findElement(By.id("authUser")).sendKeys("admin12");
-		driver.findElement(By.id("clearPass")).sendKeys("pass");
+		
+		LoginPage.enterUsername(driver, "admin");
+		LoginPage.enterPassword(driver, "pass");
+		//driver.findElement(By.id("authUser")).sendKeys("admin12");
+		//driver.findElement(By.id("clearPass")).sendKeys("pass");
 		Select selectLang = new Select(driver.findElement(By.name("languageChoice")));
 		selectLang.selectByVisibleText("English (Indian)");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
