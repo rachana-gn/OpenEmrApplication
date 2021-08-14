@@ -41,6 +41,8 @@ public class LoginTest extends WebDriverWrapper {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[text()='Flow Board']")));
 
         String actualValue = driver.getTitle();
+        //using POM
+        
         Assert.assertEquals(actualValue, "OpenEMR");
 	}
 	
@@ -51,7 +53,7 @@ public class LoginTest extends WebDriverWrapper {
 		//using creation constructor for webdriver from LoginPage
 		LoginPage login = new LoginPage(driver);
 		login.enterUsername("admin");
-		login.enterPassword("pass");
+		login.enterPassword("pass1");
 		
 		
 		//Non static method

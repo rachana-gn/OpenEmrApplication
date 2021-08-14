@@ -2,6 +2,7 @@ package com.sg.openemrpages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class LoginPage {
@@ -24,6 +25,10 @@ public class LoginPage {
 	
 	private  By usernameLocator= By.id("authUser");
 	private  By PasswordLocator= By.id("clearPass");
+	private By languageLocator = By.name("languageChoice");
+	private By loginLocator = By.xpath("//button[@type='submit']");
+	private By ackLicCertiLocator = By.xpath("//div[contains(text(),'Invalid')]");
+	private By errorMessageLocator = By.xpath("//div[contains(text(),'Invalid')]");
 	
 //	public void enterUsername(WebDriver driver, String username)
 //	{
@@ -54,6 +59,37 @@ public class LoginPage {
 		driver.findElement(PasswordLocator).sendKeys(password);
 	}
 	
+	//selectLang By Text
+	public void selectlanguageByText(String language) 
+	{
+		Select selectLang = new Select(driver.findElement(languageLocator));
+		selectLang.selectByVisibleText(language);
+	}
+		
+		public void clickOnLogin() {
+			
+		driver.findElement(loginLocator).click();
+		}
+		
+		//click on Acknowledgements and License cetificate
+		public void clickonAckandLicCerti()
+		{
+			driver.findElement(ackLicCertiLocator).click();
+			
+		}
+		//get Application description
+		//
+		
+		//get invalid login error method
+		public String getInvalidLoginError()
+	    {
+	        String errorMSG=driver.findElement(errorMessageLocator).getText();
+	        return errorMSG;
+	        //above code in one line
+	       //return.driver.findElement(errorMessageLocator).getText().trim()
+	    }
+		
+		
 	
 
 }
