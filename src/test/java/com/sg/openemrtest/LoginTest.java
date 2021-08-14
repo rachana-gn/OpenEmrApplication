@@ -14,10 +14,23 @@ public class LoginTest extends WebDriverWrapper {
 	//Day5_Class_LoginTest
 	
 	@Test 
-	public void validCredentialTest()																																				
+	public void validCredentialTest()	
 	{
-		LoginPage.enterUsername(driver, "admin");
-		LoginPage.enterPassword(driver, "pass");
+		//using creation constructor for webdriver from LoginPage
+		LoginPage login = new LoginPage(driver);
+		login.enterUsername("admin");
+		login.enterPassword("pass");
+		
+		//Non static method
+//		LoginPage login = new LoginPage();
+//		login.enterUsername(driver, "admin");
+//		login.enterPassword(driver,"pass");
+//		
+		//static method
+//		LoginPage.enterUsername(driver, "admin");
+//		LoginPage.enterPassword(driver, "pass");
+		
+		//hardcoded
 		//driver.findElement(By.id("authUser")).sendKeys("admin");
 		//driver.findElement(By.id("clearPass")).sendKeys("pass");
 		Select selectLang = new Select(driver.findElement(By.name("languageChoice")));
@@ -34,9 +47,23 @@ public class LoginTest extends WebDriverWrapper {
 	@Test
 	public void invalidCredentialTest() {
 		
+	
+		//using creation constructor for webdriver from LoginPage
+		LoginPage login = new LoginPage(driver);
+		login.enterUsername("admin");
+		login.enterPassword("pass");
 		
-		LoginPage.enterUsername(driver, "admin");
-		LoginPage.enterPassword(driver, "pass");
+		
+		//Non static method
+//		LoginPage login = new LoginPage();
+//		login.enterUsername(driver, "admin");
+//		login.enterPassword(driver,"pass");
+//		
+		//static method
+//		LoginPage.enterUsername(driver, "admin");
+//		LoginPage.enterPassword(driver, "pass");
+		
+		//hardcoded
 		//driver.findElement(By.id("authUser")).sendKeys("admin12");
 		//driver.findElement(By.id("clearPass")).sendKeys("pass");
 		Select selectLang = new Select(driver.findElement(By.name("languageChoice")));

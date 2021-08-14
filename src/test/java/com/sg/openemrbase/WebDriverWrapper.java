@@ -15,7 +15,7 @@ public class WebDriverWrapper {
 	@BeforeMethod
 	public void setUP() {
 
-		String browsers = "FF";
+		String browsers = "CH";
 
 		if (browsers.equalsIgnoreCase("ff")) {
 			System.setProperty("webdriver.gecko.driver", "src/test/resources/driver/geckodriver.exe");
