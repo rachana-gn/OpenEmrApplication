@@ -138,7 +138,7 @@ public class LoginTest extends WebDriverWrapper {
 //		login.enterUsername(driver, "admin");
 //		login.enterPassword(driver,"pass");
 //		
-//		static method
+		//static method
 //		LoginPage.enterUsername(driver, "admin");
 //		LoginPage.enterPassword(driver, "pass");
 		
