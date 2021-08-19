@@ -6,6 +6,12 @@ import org.testng.annotations.DataProvider;
 
 public class DataProviderUtils {
 	//Dataprovider for excel
+	
+	public Object[][] commonDataProvider(Method method)
+	{
+		
+	}
+	
 	@DataProvider
 	public Object[][] invalidCredentialTestData() throws IOException
 	{

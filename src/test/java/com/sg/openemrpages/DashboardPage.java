@@ -24,5 +24,7 @@ public class DashboardPage {
 	{
 		return driver.getTitle().trim();
 	}
+	
+	
 
 }
